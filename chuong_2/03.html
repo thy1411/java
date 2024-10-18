@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo React Element</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div class="post-item">
+        <h2 title="Học ReactJS">Học ReactJS cơ bản</h2>
+        <p>Học ReactJs từ cơ bản đến nâng cao</p>
+    </div>
+    <script>
+        //Sử dụng DOM
+        const divDOM =document.createElement('div');
+        divDOM.className='post-item';
+
+        const h2DOM=document.createElement('h2');
+        h2DOM.title='Học ReactJS';
+        h2DOM.innerText='Học ReactJs cơ bản';
+        divDOM.appendChild(h2DOM);
+
+        const pDOM = document.createElement('p');
+        pDOM.innerText='Học ReactJS từ cơ bản đến nâng cao';
+        divDOM.appendChild(pDOM);
+
+        document.body.appendChild(divDOM);
+
+        //2, sử dụng react
+        const divReact=React.createElement(
+            'div',
+            {
+                className:'post-item'
+            },
+            React.createElement(
+                'h2',
+                {
+                    title:'Học ReactJS'
+                },
+                'Học ReactJS cơ bản'
+            ),
+            React.createElement(
+                'p',
+                null,
+                'Học ReactJS từ cơ bản đến nâng cao'
+            )
+        );
+        const container = document.querySelector('.post-item');
+        const root = ReactDOM.createRoot(container);
+        root.render(divReact);
+    </script>
+</body>
+</html>

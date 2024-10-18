@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tổng quan về ReactJS</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div class="root"></div>
+    <script>
+        //1. Sử dụng dom để tạo thẻ h1 trong body
+        //const h1DOM=document.createElement('h1');
+        //h1DOM.title='Welcome';
+        //h1DOM.className='heading';
+        //h1DOM.innerText='Welcome to ReactJS';
+        //document.body.appendChild(h1DOM);
+
+        //2. Sử dụng React để tạo thẻ h1 trong body
+        const h1React=React.createElement(
+            'h1',{
+                titlle:'Welcome',
+                className:'heading'
+            },
+            'Welcome to ReactJS with React-DOM'
+        );
+        //Với React 18 thì render ra giao diện với React-DOM như sau
+        const container = document.querySelector('.root');
+        const root = ReactDOM.createRoot(container);
+        root.render(h1React);
+    </script>
+</body>
+</html>

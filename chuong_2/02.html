@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo React Element</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div class="root"></div>
+    <script>
+        // //Sử dụng DOM để tạo các thẻ theo yêu cầu
+        // const ulDOM=document.createElement('ul');
+        // ulDOM.id='ul-1';
+        // ulDOM.className='ul-1';
+
+        // const liDOM1=document.createElement('li');
+        // liDOM1.id='li-1';
+        // liDOM1.className='li-1';
+        // liDOM1.innerText='JavaScript';
+
+        // const liDOM2=document.createElement('li');
+        // liDOM2.id='li-2';
+        // liDOM2.className='li-2';
+        // liDOM2.innerText='ReactJS';
+
+        // ulDOM.appendChild(liDOM1);
+        // ulDOM.appendChild(liDOM2);
+
+        // document.body.appendChild(ulDOM);
+
+        //2. Sử dụng React để tạo phần tử
+        const ulReact =React.createElement(
+            'ul',{
+                id:'ul-1',
+                className:'ul-1'
+            },
+            React.createElement(
+                'li',
+                {
+                    id:'li-1',
+                    className:'li-1'
+                },
+                'JavaScript'
+            ),
+            React.createElement(
+                'li',
+                {
+                    id:'li-2',
+                    className:'li-2'
+                },
+                'ReactJS'
+            )
+        );
+        //Với React 18 thì render ra giao diện với React-DOM như sau
+        const container = document.querySelector('.root');
+        const root = ReactDOM.createRoot(container);
+        root.render(ulReact);
+    </script>
+</body>
+</html>

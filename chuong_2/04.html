@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo React Element</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div class="root"></div>
+    <script type="text/babel">
+        const container = document.querySelector('.root');
+
+        //Sử dụng cú pháp JSX
+        const khoaHoc1 = "Học ReactJS từ cơ bản đến nâng cao 1";
+        const khoaHoc2 = "Học HTML từ cơ bản đến nâng cao 1";
+        let isWeb=false;
+        const divReact=<div className="post-item">
+        <h2 title="Học ReactJS">Học ReactJS cơ bản</h2>
+        <p>{isWeb?khoaHoc1 :khoaHoc2}</p>
+            </div>
+            const root=ReactDOM.createRoot(container);
+            root.render(divReact);
+    </script>
+</body>
+
+</html>

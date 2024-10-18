@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo React Element</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div class="root"></div>
+    <script type="text/babel">
+        const container = document.querySelector('.root');
+        //1. Tạo thẻ div bao quanh các thẻ con => thẻ div không có ý nghĩa
+        // const jsx =(
+        //     <div>
+        //         <h1>Học ReactJS cơ bản</h1>
+        //         <h1>Học ReactJS nâng cao</h1>
+        //     </div>
+        // );
+        //2. Sử dụng thẻ React.Fragment
+        // const jsx=(
+        //     <React.Fragment>
+        //         <h1>Học ReactJS cơ bản</h1>
+        //         <h1>Học ReactJS nâng cao</h1>
+        //     </React.Fragment>
+        // );
+        //2. Viết tắt cách 2 như sau
+        const jsx = (
+            <>
+                <h1>Học ReactJS cơ bản</h1>
+                <h1>Học ReactJS nâng cao</h1>
+            </>
+        );
+            const root=ReactDOM.createRoot(container);
+            root.render(jsx);
+    </script>
+</body>
+
+</html>
